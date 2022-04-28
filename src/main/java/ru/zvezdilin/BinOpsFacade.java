@@ -6,15 +6,23 @@ public class BinOpsFacade {
     }
 
     public String sum(String a, String b) {
-        int first = Integer.parseInt(a, 2);
-        int second = Integer.parseInt(b, 2);
-        return Integer.toBinaryString(first + second);
+        try {
+            int first = Integer.parseInt(a, 2);
+            int second = Integer.parseInt(b, 2);
+            return Integer.toBinaryString(first + second);
+        } catch (NumberFormatException e) {
+            return "Не двоичное число";
+        }
     }
 
     public String mult(String a, String b) {
-        int first = Integer.parseInt(a, 2);
-        int second = Integer.parseInt(b, 2);
-        return Integer.toBinaryString(first * second);
+        try {
+            int first = Integer.parseInt(a, 2);
+            int second = Integer.parseInt(b, 2);
+            return Integer.toBinaryString(first * second);
+        } catch (NumberFormatException e) {
+            return "Не двоичное число";
+        }
     }
 }
 
